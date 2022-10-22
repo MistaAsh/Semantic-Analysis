@@ -1,0 +1,477 @@
+.name {
+  text-align: center;
+  font-size: 2rem;
+
+}
+
+.simscreen {
+  height: 57%;
+  width:65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+#calc3-screen{
+    width: 80%;
+}
+
+
+#screen1 {
+  display: block;
+} 
+
+
+canvas#myChart {
+  display: inline-block !important;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+label{ 
+  font-size: 1.8rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: inline-block;
+  width:25rem;
+  text-align: left;
+
+}
+
+input{
+  width: 100;
+}
+
+p{
+  font-size: 2rem;
+  font-family:  serif;
+}
+
+.simscreen-names{
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.4rem;
+
+}
+
+.simscreen-heading {
+  font-size: 3rem;
+  font-family:"Times New Roman", Times, serif;
+  padding-top:1%;
+  padding-bottom: 1%;
+  text-align: center;
+  color: #3e6389;
+  font-weight: 300;
+}
+.main-heading{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 4rem;
+  padding-top:1%;
+  padding-bottom: 1%;
+}
+
+.input-li {
+  margin: 0;
+  padding: 1.2rem;
+  list-style: none;
+  justify-content: left;
+  display: block;
+  width:100%;
+}
+.concl-li{
+  margin: 0;
+  padding: 1.5rem;
+  justify-content: left;
+  width:100%;
+}
+
+#fixed-costs {
+  padding-top: auto;
+  padding-bottom: auto;
+  padding-right: 7%;
+  padding-left: 7%;
+
+}
+#variable-costs {
+  padding-right: 7%;
+  padding-left: 7%;
+}
+
+.msg {
+  display: block;
+  text-align: center;
+}
+
+.next-button {
+  position: relative;
+  bottom: 5%;
+  left: 85%;
+}
+
+.revenue-container {
+  padding-top: 5%;
+}
+
+#next-2 {
+  visibility: hidden;
+}
+
+
+.definitions {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.switch {
+  width:6rem;
+  position: absolute;
+  left: 3rem;
+}
+
+.led {
+    width: 6rem;
+    position: absolute;
+    left: 55.3rem;
+}
+
+@media only screen and (max-width: 600px) {
+     .simscreen {
+  width:90%;
+}
+
+canvas#myChart {
+  width: 90% !important;
+}
+}
+
+figcaption {
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+  font-size: 2rem
+}
+
+#switch-4 {
+    top: 2.2rem;
+    
+}
+
+#switch-3 {
+   top: 6.5rem;
+   
+}
+
+#switch-2 {
+    top: 11rem;
+}
+
+#switch-1 {
+    top: 24.5rem;
+}
+
+#circuit {
+    position: absolute;
+    top: 0;
+    left: 9rem;
+}
+
+#led-1{
+    top: 3.8rem;
+}
+
+#led-2{
+    top: 15rem;
+}
+
+#led-3{
+    top: 21.5rem;
+}
+
+.circuit-container {
+    position: relative;
+    min-height: 35rem;
+}
+
+.table-container {
+    min-height: 35rem;
+}
+
+table {
+	width: 90%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 1rem!important;
+	background-color:white ;
+    text-align: center!important;
+}
+
+ table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+    background-clip: padding-box;
+}
+
+th {
+	text-align: left;
+}
+
+thead th {
+	background-color:white ;
+}
+
+tbody tr:hover {
+	background-color: rgba(255,255,255,0.3);
+}
+
+tbody td {
+    position: relative;
+}
+
+tbody td:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255,255,255,0.2);
+    z-index: -1;
+}
+
+.table-options th {
+    background-color: white;
+}
+
+.table-options th:hover {
+    background-color: #3e6389!important;
+    color: #fff;
+    cursor: pointer;
+}
+
+.fault-container {
+    padding-bottom: 3rem;
+    width: 100%!important;
+}
+
+.fault-toggle {
+    width: 20%!important;
+}
+
+.carousel-item {
+    margin-left: 4%; 
+    margin-right: 4%;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.carousel-control {
+    width: 4%!important;
+    background-image: none!important;
+}
+
+.carousel-indicators {
+    bottom: -4rem!important;
+}
+
+#calc2-border {
+    padding-bottom: 4rem!important;
+}
+
+#calc3-border {
+    padding-bottom: 4rem!important;
+}
+
+.theory-image {
+    width: 80%!important;
+    margin: 2% 10%;
+}
+
+.theory-li {
+    font-size: 1.8rem;
+}
+
+.theory-li-container {
+    padding-left: 3rem;
+}
+
+.test-options {
+    font-size: 2rem;
+    font-family:  serif;
+}
+
+.procedure-item {
+    font-size: 2rem;
+    font-family:  serif;
+
+}
+
+.svg-inline--fa {
+    position: absolute!important;
+    font-size: 2rem;
+}
+
+#fault-0 {
+    top: 25.8rem!important;
+    left: 25rem!important;
+}
+
+#fault-1{
+  top: 12rem!important;
+  left: 26rem!important;
+  
+}
+
+#fault-2{
+  top: 8rem!important;
+  left: 22rem!important;
+  
+}
+
+#fault-3{
+  top: 17rem!important;
+  left: 20rem!important;
+  
+}
+
+#fault-4 {
+    top: 24.5rem!important;
+    left: 18rem!important;
+}
+
+#fault-5 {
+    top: 19rem!important;
+    left: 20rem!important;
+}
+
+#fault-6 {
+    top: 3.8rem!important;
+    left: 33rem!important;
+}
+
+#fault-7 {
+    top: 23rem!important;
+    left: 35rem!important;
+}
+
+#fault-8 {
+    top: 18.2rem!important;
+    left: 43rem!important;
+}
+#fault-9 {
+    top: 8rem!important;
+  left: 32rem!important;
+}
+#fault-10 {
+    top: 10rem!important;
+  left: 43rem!important;
+}
+
+#fault-11 {
+    top: 24.5rem!important;
+  left: 52rem!important;
+}
+
+#fault-12 {
+    top: 7rem!important;
+  left: 55.5rem!important;
+}
+
+#fault-13 {
+    top: 12.6rem!important;
+  left: 9.5rem!important;
+}
+
+#fault-14 {
+    top: 8rem!important;
+  left: 14rem!important;
+}
+
+#fault-15 {
+    top: 3.8rem!important;
+    left: 14rem!important;
+}
+
+#fault-16 {
+    top: 18.2rem!important;
+    left: 32rem!important;
+}
+
+.navbar-collapse {
+    margin-left: auto !important;
+}
+
+.navbar-toggler {
+    margin-left: auto !important;
+    margin-right: 2rem;
+}
+
+
+.navbar-brand {
+    font-size: 2.5rem!important;
+    font-weight: 900!important;
+    color: #3e6389!important;
+    padding-left: 2rem!important;
+}
+
+.active .nav-link {
+    color: #ff6600!important;
+}
+
+.active .nav-link:hover {
+    text-decoration: underline;
+}
+
+
+.nav-link {
+    color: #3e6389!important;
+    font-size: 2rem!important;
+    padding-right: 2rem!important;
+}
+
+.nav-link:hover{
+    text-decoration: underline!important;
+}
+
+.navbar{
+    margin-bottom: 0!important; 
+}
+
+hr{
+    width: 90%;
+}
+
+.hr-separator {
+    margin: 4rem;
+}
+
+.fa-bars {
+    color: #3e6389;
+    font-size: 2.5rem;
+}
+
+.navbar-toggler {
+    padding: 0!important;
+}
+
+#collapsibleNavbar{
+    margin-left: 2rem!important;
+}
+
+.student-name {
+    font-size: 1.8rem;
+}
