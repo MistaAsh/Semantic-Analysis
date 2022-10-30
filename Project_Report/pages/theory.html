@@ -84,156 +84,66 @@
         <div>
           <div class="item">
             <div>
-              <h3 class="def-heading">Priority Encoder</h3>
-              <p class="theory">In Digital Electronics, the binary encoders are the multi-input
-                combinational logic circuits, which consider all the input lines simultaneously and then
-                convert them into an equivalent single encoded output. An n-bit digital encoder contains
-                2^n input lines and n output lines. To overcome the disadvantages of binary encoders,
-                priority encoders were developed that work based on the highest priority input.
-                In most digital applications, these encoders are used to select the inputs, which have
-                the highest priority level.
+              <h3 class="def-heading">Type Expressions</h3>
+              <p class="theory">
+                Type Expression is an entity in Compiler Design that denotes the type of a language construct. Type Expressions can be of multiple types such as-
+                  <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - basic types: <i>int, float, double, char</i> 
+                  <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - formed by applying operators called <i>type constructors</i> to another type expressions 
+                  <br> A type constructor applied to a type expression is a type expression. 
+                  <br> For example, <b>Array:</b> if T is a type expression then array(I, T) is a type expression denoting the type of an array with elements of type T and index set I.
               </p>
               <hr class="hr-separator">
-              <h3 class="def-heading">4 to 2 priority encoder </h3>
-              <p class="theory">This is also referred to as 4- bit priority, which consists of 4 inputs
-                and 2 output lines. Since an encoder contains 2^n input lines and n output lines. The
-                third output is ‘V’, which is considered as a valid but indicator and it is set to 1
-                when more than one input line is high or active (1).
-                If the valid bit is equal to ‘0’, then all the inputs are ‘0’. In this case, the other 2
-                output lines are considered as don’t care conditions denoted by ‘X.
+              <h3 class="def-heading">Type Checking</h3>
+              <p class="theory">
+                Type Checking in Compiler Design refers to the process of checking for each operation such that they receive the required number of operands of the proper datatype.  
+                <br> For example, in the expression: &nbsp; <b><i>A = B * j + d;</i></b>
+                <br> * and + are basically int and float data types based operations and if any variable in this expression is of other than int and float then compiler will generate type error.
+                <div class="theory-li-container">
+                  <li class="theory-li"> Dynamic Type Checking: it is done at runtime and uses the concept of type tag which is stored in each data objects that indicates the type of the object. Languages such as <i>Perl</i> and <i>Prolog</i> follow dynamic type checking. </li>
+                  <li class="theory-li"> Static Type Checking: it is done at compile-time. The information for the same is provied by the declaration of language structures. 
+                    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - for each operation, the number, order and datatype of the arguments are required.
+                    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - for each variable, the name and datatype is required.
+                  </li>
+                </div>
               </p>
               <figure>
-                <img src="../images/circuit.jpeg" alt="circuit-diagram" class="theory-image">
-                <figcaption>Fig 1: Circuit for 4x2 Priority Encoder</figcaption>
+                <img src="../images/type-checker-1.png" alt="type-checker-1" class="theory-image">
+                <figcaption>Fig 1: Type Checker </figcaption>
               </figure>
             </div>
           </div>
           <hr class="hr-separator">
           <div class="item">
             <div>
-              <h3 class="def-heading">Truth Table:</h3>
-              <p class="theory">A truth table for 4-input priority encoder with D0, D1, D2 and D3 as
-                inputs and A0, A1 and V as the outputs is show below.</p>
+              <h3 class="def-heading">Type Equivalence</h3>
+              <p class="theory">
+                Type Equivalence is the methodology of defining the equivalence of two types. The different types of equivalence that are essential to be considered are:
+                <div class="theory-li">
+                  <li class="theory-li-container"> Structural equivalence: Two type expressions are said to be structurally equivalent if and only if, either these are of the same basic types or these are formed by applying the same constructor to the given equivalent types. </li>
+                  <li class="theory-li-container"> Name equivalence: two type expressions can be said to be name equivalent if and only if, they are structurally equivalent and the names of the type constructors are the same. </li>
+                </div>
+              </p>
+            </div>
+          </div>
+          <hr class="hr-separator">
+          <div class="item">
+            <div>
+              <h3 class="def-heading">Type Conversion</h3>
+              <p class="theory">
+                The type conversion is an operation that takes a data object of one type and creates the equivalent data objects of multiple types. The signature of a type conversion operation is given as
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>conversion_op : type1 → type2</i>
+                <br> If during type checking, a mismatch appears between the actual type of an argument and the expected type for that operation, then type conversion easily converts the data object implicitly and prevents the error. In some languages such as C, type conversion is a built-in function, which implicitly casts an expression to convert it to the correct type. There are two types of type conversions-
+                <div class="theory-li-container">
+                  <li class="theory-li">Implicit type conversion (Coercions): The programming languages that enable mixed-mode expressions should describe conventions for implicit operand type conversions. Coercion is defined as an automatic conversion between types. For example in Pascal, if the operands for the addition operation are of integer type and other real types, one of then the integer data object is implicitly changed to type real earlier the addition is implemented. </li>
+                  <li class="theory-li">Explicit type conversion − Some languages support few efficiencies for doing explicit conversions, both widening and narrowing. In some cases, warning messages are created when an explicit narrowing conversion results in a meaningful change to the value of the object being modified.</li>
+                </div>
+              </p>
               <figure>
-                <img src="../images/truth-table.png" alt="truth-table" class="theory-image">
-                <figcaption>Fig 2: Truth Table for 4x2 Priority Encoder</figcaption>
+                <img src="../images/type-conversion-1.jpg" alt="type-conversion-1" class="theory-image">
+                <figcaption>Fig 2: Type Conversion hierarchy in C</figcaption>
               </figure>
             </div>
           </div>
-          <hr class="hr-separator">
-          <div class="item">
-            <div>
-              <h3 class="def-heading">K-Map:</h3>
-              <p class="theory">From the truth table we can see that D0,D1,D2 and DE are inputs lines and
-                A,B are the output lines and V is a valid Indicator line.The D3 has highest priority and
-                D0 had Lowest priority. We can find the equation of output from K-Map as below.</p>
-              <figure>
-                <img src="../images/tt2.webp" alt="truth-table2" class="theory-image">
-                <figcaption>Fig 3: K map for a 4x2 Priority Encoder</figcaption>
-              </figure>
-              <p class="theory">
-                Equations derived are: <br>
-                A = D3 + D1D2' <br>
-                B = D2 + D3 <br>
-                V = D0 + D1+ D2 + D3<br>
-              </p>
-              <!--                            <figure>
-                              <img src="../images/tt3.png" alt="truth-table2" class="theory-image">
-                              <figcaption>Fig 3: Equations of a 4x2 Priority Encoder</figcaption>
-                            </figure> -->
-            </div>
-          </div>
-          <hr class="hr-separator">
-          <div class="item">
-            <div>
-              <h3 class="def-heading">Applications </h3>
-              <p class="theory">
-                Some of the applications of priority encoder are, </p>
-              <div class="theory-li-container">
-                <li class="theory-li"> It is used to reduce the no. of wires and connections required for electronic
-                  circuit
-                  designing that have multiple input lines.
-                  Example keypads and keyboards.
-                </li>
-                <li class="theory-li">
-                  Used in controlling the position in the ship’s navigation and robotics arm position.
-                </li>
-                <li class="theory-li">
-                  Used in the detection of highest priority input in various applications of
-                  microprocessor interrupt controllers.
-                </li>
-                <li class="theory-li">
-                  Used to protect the entire network from hackers by transmitting the binary code over the network.
-                </li>
-                <li class="theory-li">
-                  Used to encode the analog to digital converter’s output.
-                </li>
-                <li class="theory-li">
-                  Used in synchronization of the speed of motors in industries.
-                </li>
-                <li class="theory-li">
-                  Used in robotic vehicles.
-                </li>
-                <li class="theory-li">
-                  Used in applications of home automation systems with RF.
-                </li>
-                <li class="theory-li">
-                  Used in hospitals for health monitoring systems.
-                </li>
-                <li class="theory-li">
-                  Used in secure communication systems with RF technology to enable secret code.
-                </li>
-              </div>
-            </div>
-          </div>
-          <hr class="hr-separator">
-          <div class="item">
-            <div>
-              <h3 class="def-heading">Stuck at fault in circuits </h3>
-              <p class="theory">
-                Basically a stuck at fault is a structural level fault.
-                In this we take a circuit as a netlist, typically at the level of gates and flip-flops.
-                In this Fault there are some assumptions </p>
-              <div class="theory-li-container">
-
-                <li class="theory-li">
-                  The blocks are fault-free.
-                </li>
-                <li class="theory-li">
-                  The Interconnections between gates is faulty.
-                </li>
-              </div>
-              <p class="theory">
-                In stuck at fault we assume that some of the lines are permanently stuck at logic '0' or
-                logic '1'.
-                It's a very popular fault model.
-                <br>
-                Fault in a line A is denoted as : A s-a-0 or A/0 and A s-a-1 or A/1.
-                <br>
-                In our ciruit we can see that there are 4 input lines, D0, D1, D2 and D3. If we consider
-                the stuck at faults one at a time, we get the following possibilities - D0/0, D0/1,
-                D1/0, D1/1, D2/0, D2/1, D3/0, D3/1, So 8 single stuck at faults are present.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <div>
-              <h3 class="def-heading">1. Single stuck at fault </h3>
-              <p class="theory">
-                only one of the lines is taken as stuck at fault at a time. This is the most widely used
-                technique.
-                If our circuit consists of K number of wires, then number of single stuck at faults is
-                2K.
-              </p>
-              <h3 class="def-heading">2. Multiple stuck at fault </h3>
-              <p class="theory"> Any number of circuit lines can be at stuck at fault. For a circuit
-                consisting of K lines the number of Multiple stuck at faults is ((3^K)-1).</p>
-              <h3 class="def-heading">Some results </h3>
-              <p class="theory"> A test that detect all single stuck at faults detects large percentage of
-                Multiple stuck at faults(>95%).</p>
-            </div>
-          </div>
-        </div>
         <hr class="hr-separator">
       </div>
     </div>
