@@ -12,14 +12,16 @@ const typeTreeConfig = {
   siblingSeparation: 90,
 };
 
-const types = ["int", "float", "bool", "string", "char", "void"];
+const types = ["int", "double", "long", "float", "bool", "string", "char", "void"];
 const typeMap = {
-  int: "integer",
-  float: "float",
-  bool: "boolean",
-  string: "string",
-  char: "character",
-  void: "void",
+    "int": "integer",
+    "double": "double",
+    "long": "long",
+    "float": "float",       
+    "bool": "boolean",
+    "string": "string",
+    "char": "character",
+    "void": "void"
 };
 
 function parseTypeInput(inputStr, errEl) {
