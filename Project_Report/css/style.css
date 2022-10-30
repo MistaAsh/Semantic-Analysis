@@ -247,3 +247,40 @@ hr {
   font-weight: 400;
   margin-top: 2rem;
 }
+
+
+#type-checking-and-conversion > label{
+  width: 10px;
+  
+}
+
+#type-checking-and-conversion  input{
+  width: 100px !important;
+  
+}
+
+.node{
+  display: flex !important;
+}
+
+.type-checking {
+ display: flex;
+ align-items: top;
+}
+
+.type-checking-box {
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
+  text-align: center;
+  font-size: 12px;
+}
+
+.type-checking > button {
+  margin-left: 10px !important;
+  height: 30px !important;
+}
+
+.type-checking > label {
+  margin-left: 10px;
+}
