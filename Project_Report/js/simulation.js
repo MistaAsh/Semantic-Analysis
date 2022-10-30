@@ -12,9 +12,11 @@ const typeTreeConfig = {
     siblingSeparation: 90,
 };
 
-const types = ["int", "float", "bool", "string", "char", "void"];
+const types = ["int", "double", "long", "float", "bool", "string", "char", "void"];
 const typeMap = {
     "int": "integer",
+    "double": "double",
+    "long": "long",
     "float": "float",       
     "bool": "boolean",
     "string": "string",
