@@ -88,23 +88,32 @@
     <hr>
     <div class="container border-box">
       <ul class="nav nav-tabs">
-        <li><a data-toggle="tab" href="#type-expressions">Type Expressions</a></li>
+        <li class="active"><a data-toggle="tab" href="#type-expressions">Type Expressions</a></li>
         <li><a data-toggle="tab" href="#type-equivalence">Type Equivalence</a></li>
-        <li class="active"><a data-toggle="tab" href="#type-checking-and-conversion">Type Checking & Conversion</a></li>
+        <li><a data-toggle="tab" href="#type-checking-and-conversion">Type Checking & Conversion</a></li>
       </ul>
 
       <div class="tab-content">
-
-        <div id="type-expressions" class="tab-pane fade ">
-          <form class="inputForm">
-            <label for="typeExpression">Enter a type expression: </label>
-            <input type="text" id="typeExpression" name="type_expression" placeholder="ex: int[2][3][4]">
-            <button type="button" class="btn btn-primary" onclick="generateTypeTree()">Submit</button>
-          </form>
-          <p class="err" id="type-expression-err"></p>
-          <label for="simplifiedType" id="simplifiedTypeLabel">Simplified type expression: </label>
-          <p id="simplifiedType"></p>
-          <div id="typeTree">
+        <div id="type-expressions" class="tab-pane fade in active">
+          <div class="row">
+            <div class="col-md-6 instruction-box">
+              <h3 class="simscreen-heading">Instructions</h3>
+              <p>Enter a type expression in the input box and click on the submit button to generate the type tree.</p>
+              <p>For example, if you enter int[2][3][4], the type tree will be generated as shown below.</p>
+              <img src="../images/type_tree.png" alt="Type Tree">
+            </div>
+            <div class="col-md-6">
+              <form class="inputForm">
+                <label for="typeExpression">Enter a type expression: </label>
+                <input type="text" id="typeExpression" name="type_expression" placeholder="ex: int[2][3][4]">
+                <button type="button" class="btn btn-primary" onclick="generateTypeTree()">Submit</button>
+              </form>
+              <p class="err" id="type-expression-err"></p>
+              <label for="simplifiedType" id="simplifiedTypeLabel">Simplified type expression: </label>
+              <p id="simplifiedType"></p>
+              <div id="typeTree">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -147,7 +156,7 @@
           </div>
         </div>
 
-        <div id="type-checking-and-conversion" class="tab-pane fade in active">
+        <div id="type-checking-and-conversion" class="tab-pane fade">
           <form action="" class="inputForm">
             <label for="lhs">Enter the expression: </label>
             <div class="type-checking">
