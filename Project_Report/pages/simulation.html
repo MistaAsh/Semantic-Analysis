@@ -169,9 +169,9 @@
           <div class="row">
             <div class="col-lg-5 instruction-box">
               <h3 class="simscreen-heading">Instructions</h3>
-              <p>Enter a type expression in the format of <i>type[number][number]</i>...</p>
-              <p>For example, if you enter int[2][3][4], the type tree will be generated as shown below.</p>
-              <img src="../images/type-tree-1.png" alt="Type Tree" height="300px">
+              <p>Select the data-types from the dropdown boxes and click submit to run the simulation.</p>
+              <p>For example, if the expression was <i>[int = double * int + double]</i>, the output would be-</p>
+              <img src="../images/type-conversion-2.png" alt="Type-conversion" height="300px">
             </div>
             
             <div class="col-lg-7">
@@ -179,31 +179,30 @@
                 <label for="lhs">Enter the expression: </label>
                 <div class="type-checking">
                   <div class="type-checking-box">
-
                     <select id="lhs" name="lhs">
-                  <option value="int">int</option>
-                  <option value="float">float</option>
-                  <option value="char">char</option>
-                  <option value="double">double</option>
-                  <option value="long">long</option>
-                  <option value="string">string</option>
-                  <option value="bool">bool</option>
-                  <option value="void">void</option>
-                </select>
+                      <option value="int">int</option>
+                      <option value="float">float</option>
+                      <option value="char">char</option>
+                      <option value="double">double</option>
+                      <option value="long">long</option>
+                      <option value="string">string</option>
+                      <option value="bool">bool</option>
+                      <option value="void">void</option>
+                    </select>
                     <p> var1 </p>
                   </div>
                   <label id="equal" style="width: 10px;" for="operand1"> = </label>
                   <div class="type-checking-box">
                     <select id="operand1" name="operand1">
-                  <option value="int">int</option>
-                  <option value="float">float</option>
-                  <option value="char">char</option>
-                  <option value="double">double</option>
-                  <option value="long">long</option>
-                  <option value="string">string</option>
-                  <option value="bool">bool</option>
-                  <option value="void">void</option>
-                </select>
+                      <option value="int">int</option>
+                      <option value="float">float</option>
+                      <option value="char">char</option>
+                      <option value="double">double</option>
+                      <option value="long">long</option>
+                      <option value="string">string</option>
+                      <option value="bool">bool</option>
+                      <option value="void">void</option>
+                    </select>
                     <p> var2 </p>
                   </div>
                   <label id="plus" style="width: 10px;" for="operand2"> + </label>
@@ -237,9 +236,10 @@
                   <button id="submit" type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
                 </div>
               </form>
+              
+              <p id="syntax-result"></p>
               <div id="syntaxTree1" width = 100px></div>
               </div>
-              <p id="syntax-result"></p>
             </div>
           </form>
           </p>
