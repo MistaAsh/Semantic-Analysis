@@ -83,10 +83,10 @@
       </ul>
     </div>
   </nav>
-  <div class="simscreen" id="calc4-screen">
+  <div class="simp-simscreen" id="calc4-screen">
     <h2 class="simscreen-heading">SIMULATION</h2>
     <hr>
-    <div class="container border-box">
+    <div class="border-box">
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#type-expressions">Type Expressions</a></li>
         <li><a data-toggle="tab" href="#type-equivalence">Type Equivalence</a></li>
@@ -96,13 +96,13 @@
       <div class="tab-content">
         <div id="type-expressions" class="tab-pane fade in active">
           <div class="row">
-            <div class="col-md-6 instruction-box">
+            <div class="col-lg-5 instruction-box">
               <h3 class="simscreen-heading">Instructions</h3>
-              <p>Enter a type expression in the input box and click on the submit button to generate the type tree.</p>
+              <p>Enter a type expression in the format of <i>type[number][number]</i>...</p>
               <p>For example, if you enter int[2][3][4], the type tree will be generated as shown below.</p>
-              <img src="../images/type_tree.png" alt="Type Tree">
+              <img src="../images/type-tree-1.png" alt="Type Tree" height="300px">
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-7">
               <form class="inputForm">
                 <label for="typeExpression">Enter a type expression: </label>
                 <input type="text" id="typeExpression" name="type_expression" placeholder="ex: int[2][3][4]">
@@ -118,17 +118,17 @@
         </div>
 
         <div id="type-equivalence" class="tab-pane fade">
-          <div class="row">
-            <div class="col-md-6">
+          <div class="row text-center">
+            <div class="col-lg-6">
               <form class="inputForm">
-                <label for="typeExpression1">Enter first expression: </label>
+                <label id="expression" for="typeExpression1">Enter first expression: </label>
                 <input type="text" id="typeExpression1" name="type_expression1" placeholder="ex: int[2][3][4]">
               </form>
               <p class="err" id="type-expression-err1"></p>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <form class="inputForm">
-                <label for="typeExpression2">Enter second expression: </label>
+                <label id="expression" for="typeExpression2">Enter second expression: </label>
                 <input type="text" id="typeExpression2" name="type_expression2" placeholder="ex: int[2][3][4]">
               </form>
               <p class="err" id="type-expression-err2"></p>
@@ -141,13 +141,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <label for="simplifiedType1" id="simplifiedTypeLabel1">Simplified type expression: </label>
               <p id="simplifiedType1"></p>
               <div id="typeTree1">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <label for="simplifiedType2" id="simplifiedTypeLabel2">Simplified type expression: </label>
               <p id="simplifiedType2"></p>
               <div id="typeTree2">
@@ -157,35 +157,45 @@
         </div>
 
         <div id="type-checking-and-conversion" class="tab-pane fade">
-          <form action="" class="inputForm">
-            <label for="lhs">Enter the expression: </label>
-            <div class="type-checking">
-              <div class="type-checking-box">
-                <input type="text" id = "lhs" name = "lhs" placeholder = "">
-                <p> var1 </p>
-              </div>
-              <label id = "equal" style="width: 10px;" for="operand1"> = </label>
-              <div class="type-checking-box">
-                <input type="text" id="operand1" name="operand1" >
-                <p> var2 </p>
-              </div>
-              <label id = "plus" style="width: 10px;" for="operand2"> + </label>
-              <div class="type-checking-box">
-                <input type="text" id="operand2" name="operand2" placeholder="">
-                <p> var3 </p>
-              </div>
-              <label id = "star" style="width: 10px;" for="operand3"> * </label>
-              <div class="type-checking-box">
-                <input type="text" id="operand3" name="operand3" placeholder="">
-                <p> var4 </p>
-              </div>
-              <button type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
+          <div class="row">
+            <div class="col-lg-5 instruction-box">
+              <h3 class="simscreen-heading">Instructions</h3>
+              <p>Enter a type expression in the format of <i>type[number][number]</i>...</p>
+              <p>For example, if you enter int[2][3][4], the type tree will be generated as shown below.</p>
+              <img src="../images/type-tree-1.png" alt="Type Tree" height="300px">
             </div>
-          </form>
+            
+            <div class="col-lg-7">
+              <form action="" class="inputForm">
+                <label for="lhs">Enter the expression: </label>
+                <div class="type-checking">
+                  <div class="type-checking-box">
+                    <input type="text" id = "lhs" name = "lhs" placeholder = "">
+                    <p> var1 </p>
+                  </div>
+                  <label id = "equal" style="width: 10px;" for="operand1"> = </label>
+                  <div class="type-checking-box">
+                    <input type="text" id="operand1" name="operand1" >
+                    <p> var2 </p>
+                  </div>
+                  <label id = "plus" style="width: 10px;" for="operand2"> + </label>
+                  <div class="type-checking-box">
+                    <input type="text" id="operand2" name="operand2" placeholder="">
+                    <p> var3 </p>
+                  </div>
+                  <label id = "star" style="width: 10px;" for="operand3"> * </label>
+                  <div class="type-checking-box">
+                    <input type="text" id="operand3" name="operand3" placeholder="">
+                    <p> var4 </p>
+                  </div>
+                  <button type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
+                </div>
+              </form>
 
-          <div id="syntaxTree1" width = 100px></div>
-        </div>
-
+              <div id="syntaxTree1" width = 100px></div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>

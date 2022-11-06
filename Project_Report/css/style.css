@@ -12,6 +12,15 @@
   margin-bottom: 5%;
 }
 
+.simp-simscreen {
+  height: 57%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
 .center {
   display: flex;
   flex-direction: column;
@@ -221,6 +230,8 @@ hr {
 
 .nav-tabs {
   font-size: 18px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .inputForm {
@@ -248,10 +259,12 @@ hr {
   margin-top: 2rem;
 }
 
+#expression {
+  text-align: center;
+}
 
 #type-checking-and-conversion > label{
   width: 10px;
-  
 }
 
 #type-checking-and-conversion  input{
@@ -265,6 +278,7 @@ hr {
 
 .type-checking {
  display: flex;
+ flex-wrap: wrap;
  align-items: top;
 }
 
@@ -275,6 +289,12 @@ hr {
   text-align: center;
   font-size: 12px;
 }
+
+/* .typeExpression2 {
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+} */
 
 .type-checking > button {
   margin-left: 10px !important;
