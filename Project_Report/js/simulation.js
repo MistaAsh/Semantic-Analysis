@@ -14,14 +14,14 @@ const typeTreeConfig = {
 
 const types = ["int", "double", "long", "float", "bool", "string", "char", "void"];
 const typeMap = {
-    "int": "integer",
-    "double": "double",
-    "long": "long",
-    "float": "float",       
-    "bool": "boolean",
-    "string": "string",
-    "char": "character",
-    "void": "void"
+  "int": "integer",
+  "double": "double",
+  "long": "long",
+  "float": "float",
+  "bool": "boolean",
+  "string": "string",
+  "char": "character",
+  "void": "void"
 };
 
 function parseTypeInput(inputStr, errEl) {
@@ -213,96 +213,505 @@ function getSyntaxTree() {
   });
 }
 
-function getType(string) {
-  //CHeck if string is a variable using RegEx
-  identiifer_regex = "[_a-zA-Z][_a-zA-Z0-9]*";
-  if (string.match(identiifer_regex)) {
-    return "variable";
+
+function getPlusCombinedType(type1, type2) {
+
+  if (type1 === "int") {
+
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "int";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  //Check if string is a number using RegEx
-  integer_regex = "[0-9]+";
-  if (string.match(integer_regex)) {
-    return "integer";
+  if (type1 === "float") {
+    if (type2 === "int")
+      return "float";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "float";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "float";
+
+    if (type2 === "char")
+      return "float";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  //Check if string is a boolean using RegEx
-  boolean_regex = "true|false";
-  if (string.match(boolean_regex)) {
-    return "boolean";
+  if (type1 === "double") {
+    if (type2 === "int")
+      return "double";
+
+    if (type2 === "float")
+      return "double";
+
+    if (type2 === "bool")
+      return "double";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "double";
+
+    if (type2 === "char")
+      return "double";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  //Check if string is a float using RegEx
-  float_regex = "[0-9]+.[0-9]+";
-  if (string.match(float_regex)) {
-    return "float";
+  if (type1 === "long") {
+    if (type2 === "int")
+      return "long";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "long";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "long";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  return "invalid";
+  if (type1 === "bool") {
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "bool";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
+  }
+
+  if (type1 === "string") {
+    if (type2 === "int")
+      return "Incompatible Types";
+
+    if (type2 === "float")
+      return "Incompatible Types";
+
+    if (type2 === "bool")
+      return "Incompatible Types";
+
+    if (type2 === "string")
+      return "string";
+
+    if (type2 === "long")
+      return "Incompatible Types";
+
+    if (type2 === "char")
+      return "string";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "Incompatible Types";
+
+  }
+
+  if (type1 === "char") {
+
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "int";
+
+    if (type2 === "string")
+      return "string";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
+  }
+
+  if (type1 === "void") {
+    if (type2 === "void")
+      return "void"
+    return "Incompatible Types"
+  }
 }
 
-function getCombinedType(type1, type2) {
-  if (type1 === "invalid" || type2 === "invalid") {
-    return "invalid";
+function getStarCombinedType(type1, type2) {
+
+  if (type1 === "int") {
+
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "int";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "variable" || type2 === "variable") {
-    return "variable";
+  if (type1 === "float") {
+    if (type2 === "int")
+      return "float";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "float";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "float";
+
+    if (type2 === "char")
+      return "float";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "integer" && type2 === "integer") {
-    return "integer";
+  if (type1 === "double") {
+    if (type2 === "int")
+      return "double";
+
+    if (type2 === "float")
+      return "double";
+
+    if (type2 === "bool")
+      return "double";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "double";
+
+    if (type2 === "char")
+      return "double";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "integer" && type2 === "float") {
-    return "float";
+  if (type1 === "long") {
+    if (type2 === "int")
+      return "long";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "long";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "long";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "float" && type2 === "integer") {
-    return "float";
+  if (type1 === "bool") {
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "bool";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "float" && type2 === "float") {
-    return "float";
+  if (type1 === "string") {
+    if (type2 === "int")
+      return "Incompatible Types";
+
+    if (type2 === "float")
+      return "Incompatible Types";
+
+    if (type2 === "bool")
+      return "Incompatible Types";
+
+    if (type2 === "string")
+      return "string";
+
+    if (type2 === "long")
+      return "Incompatible Types";
+
+    if (type2 === "char")
+      return "Incompatible Types";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "Incompatible Types";
+
   }
 
-  if (type1 === "boolean" && type2 === "boolean") {
-    return "boolean";
+  if (type1 === "char") {
+
+    if (type2 === "int")
+      return "int";
+
+    if (type2 === "float")
+      return "float";
+
+    if (type2 === "bool")
+      return "int";
+
+    if (type2 === "string")
+      return "Incompatible Types";
+
+    if (type2 === "long")
+      return "long";
+
+    if (type2 === "char")
+      return "int";
+
+    if (type2 === "void")
+      return "Incompatible Types";
+
+    if (type2 === "double")
+      return "double";
+
   }
 
-  if (type1 === "integer" && type2 === "boolean") {
-    return "integer";
+  if (type1 === "void") {
+    if (type2 === "void")
+      return "void"
+    return "Incompatible Types"
   }
-  if (type1 === "boolean" && type2 === "integer") {
-    return "integer";
-  }
+}
 
-  if (type1 === "char" && type2 === "char") {
-    return "char";
-  }
+function checkLeftRightTypeEquivalence(left_type, right_type) {
+  if (left_type == "int") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
 
-  if (type1 === "char" && type2 === "integer") {
-    return "integer";
-  }
-
-  if (type1 === "integer" && type2 === "char") {
-    return "char";
+    return false;
   }
 
-  if (type1 === "char" && type2 === "boolean") {
-    return "invalid";
+  if (left_type == "float") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
+
+    return false;
   }
 
-  if(type1 === "integer" && type2 === "char") {
-    return "integer";
+  if (left_type == "double") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
+
+    return false;
   }
 
-  
+  if (left_type == "long") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
 
-  return "invalid";
+    return false;
+  }
+
+  if (left_type == "bool") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
+
+    return false;
+  }
+
+
+  if (left_type == "char") {
+    if (right_type == "int" || right_type == "float" || right_type == "long" || right_type == "double" || right_type == "char")
+      return true
+
+    return false;
+  }
+  if (left_type == "string") {
+    if (right_type === "string")
+      return true;
+    return false;
+  }
+
+  if (left_type == "void") {
+    if (right_type == "void")
+      return true;
+
+    return false;
+  }
+
+  return false;
+
+
+
+}
+
+function isInputValid() {
+  lhs = document.getElementById("lhs").value;
+  operand1_type = document.getElementById("operand1").value.toLowerCase().trim().replace(/\s/g, '');
+  operand2_type = document.getElementById("operand2").value.toLowerCase().trim().replace(/\s/g, '');
+  operand3_type = document.getElementById("operand3").value.toLowerCase().trim().replace(/\s/g, '');
+
+  if (lhs === "" || operand1_type === "" || operand2_type === "" || operand3_type === "") {
+    return false;
+  }
+
+
+  if (!types.includes(lhs) || !types.includes(operand1_type) || !types.includes(operand2_type) || !types.includes(operand3_type)) {
+    return false;
+  }
+
+  return true;
+}
+
+
+
+function createTrees() {
+  let valid = isInputValid();
+  if (!valid) {
+    //Show Error Message
+    return;
+  }
+
+  createSyntaxTree();
+  createAnnotatedSyntaxTree();
 }
 
 function createSyntaxTree() {
+  let plus_error = false;
+  let star_error = false;
+  let equal_error = false;
+
   lhs = document.getElementById("lhs").value;
   operand1_type = document.getElementById("operand1").value;
   operand2_type = document.getElementById("operand2").value;
@@ -310,9 +719,21 @@ function createSyntaxTree() {
 
   //   console.log(operand1_type, operand2_type, operand3_type);
 
-  star_type = getCombinedType(operand2_type, operand3_type);
-  plus_type = getCombinedType(operand1_type, star_type);
-  eq_type = getCombinedType(lhs, plus_type);
+  star_type = getStarCombinedType(operand2_type, operand3_type);
+  plus_type = getPlusCombinedType(operand1_type, star_type);
+  eq_type = lhs;
+
+  if (star_type === "Incompatible Types")
+    star_error = true;
+
+  if (plus_type === "Incompatible Types")
+    plus_error = true;
+
+  if (checkLeftRightTypeEquivalence(lhs, plus_type) === false)
+    equal_error = true;
+
+
+
 
   console.log("star types: ", star_type, plus_type, eq_type);
 
@@ -336,26 +757,32 @@ function createSyntaxTree() {
     },
 
     nodeStructure: {
-      text: { name: "= (" + eq_type + ")" },
+      text: { name: plus_error || star_error ? "= (undefined)" : equal_error ? "= (Incompatible Assignment)" : "= (" + eq_type + ")" },
+      ...((plus_error || star_error || equal_error) && { HTMLclass: "red" }),
       children: [
         {
           text: lhs,
         },
         {
           text: { name: "+ (" + plus_type + ")" },
+          ...((plus_error || !plus_type) && { HTMLclass: "red" }),
           children: [
             {
               text: operand1_type,
+
             },
 
             {
               text: "* (" + star_type + ")",
+              ...(star_error && { HTMLclass: "red" }),
               children: [
                 {
                   text: operand2_type,
+
                 },
                 {
                   text: operand3_type,
+
                 },
               ],
             },
@@ -365,9 +792,27 @@ function createSyntaxTree() {
     },
   };
 
+  console.log(config.nodeStructure);
+
   let chart = new Treant(config, () => {
     console.log("Syntax Tree generated");
   });
 
-  console.log(lhs, operand1_type, operand2_type, operand3_type);
+  if (plus_error || star_error || equal_error) {
+    document.getElementById("syntax-result").innerHTML = "The expression is not semantically valid";
+    document.getElementById("syntax-result").style = "color: red; text-align: center;";
+  }
+  else {
+    document.getElementById("syntax-result").innerHTML = "The expression is semantically valid";
+    document.getElementById("syntax-result").style = "color: green; text-align: center;";
+
+  }
+
+
+  // console.log(lhs, operand1_type, operand2_type, operand3_type);
+}
+
+
+function createAnnotatedSyntaxTree() {
+
 }

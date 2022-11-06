@@ -30,15 +30,14 @@
 
 label {
   font-size: 1.8rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   display: inline-block;
   width: 25rem;
   text-align: left;
 }
 
 input {
-  width: 100;
+  width: 150px;
 }
 
 p {
@@ -95,7 +94,7 @@ p {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and(max-width: 600px) {
   .simscreen {
     width: 90%;
   }
@@ -263,22 +262,23 @@ hr {
   text-align: center;
 }
 
-#type-checking-and-conversion > label{
+#type-checking-and-conversion > label {
   width: 10px;
+
 }
 
-#type-checking-and-conversion  input{
+#type-checking-and-conversion input {
   width: 100px !important;
-  
+
 }
 
-.node{
+.node {
   display: flex !important;
 }
 
 .type-checking {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
  align-items: top;
 }
 
@@ -307,4 +307,8 @@ hr {
 
 .instruction-box {
   text-align: justify;
+}
+
+#type-checking-and-conversion select {
+  height: 25px;
 }
