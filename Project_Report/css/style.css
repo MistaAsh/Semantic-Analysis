@@ -284,3 +284,7 @@ hr {
 .type-checking > label {
   margin-left: 10px;
 }
+
+.instruction-box {
+  text-align: justify;
+}
