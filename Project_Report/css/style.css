@@ -6,10 +6,7 @@
 .simscreen {
   height: 57%;
   width: 65%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2%;
-  margin-bottom: 5%;
+  margin: 2% auto 5%;
 }
 
 .center {
@@ -21,8 +18,7 @@
 
 label {
   font-size: 1.8rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   display: inline-block;
   width: 25rem;
   text-align: left;
@@ -86,7 +82,7 @@ p {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and(max-width: 600px) {
   .simscreen {
     width: 90%;
   }
@@ -249,23 +245,23 @@ hr {
 }
 
 
-#type-checking-and-conversion > label{
+#type-checking-and-conversion > label {
   width: 10px;
-  
+
 }
 
-#type-checking-and-conversion  input{
+#type-checking-and-conversion input {
   width: 100px !important;
-  
+
 }
 
-.node{
+.node {
   display: flex !important;
 }
 
 .type-checking {
- display: flex;
- align-items: top;
+  display: flex;
+  align-items: top;
 }
 
 .type-checking-box {
@@ -287,4 +283,8 @@ hr {
 
 .instruction-box {
   text-align: justify;
+}
+
+#type-checking-and-conversion select {
+  height: 25px;
 }
