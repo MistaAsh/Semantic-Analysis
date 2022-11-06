@@ -41,6 +41,15 @@
 
   <!-- Animation CD -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <script>
+    document.onkeypress = function (e) {
+      e = e || window.event;
+      if (e.keyCode === 13)
+        document.getElementById("submit").click();
+
+    };
+  </script>
 </head>
 
 <body>
@@ -152,29 +161,29 @@
             <label for="lhs">Enter the expression: </label>
             <div class="type-checking">
               <div class="type-checking-box">
-                <input type="text" id = "lhs" name = "lhs" placeholder = "">
+                <input type="text" id="lhs" name="lhs" placeholder="">
                 <p> var1 </p>
               </div>
-              <label id = "equal" style="width: 10px;" for="operand1"> = </label>
+              <label id="equal" style="width: 10px;" for="operand1"> = </label>
               <div class="type-checking-box">
-                <input type="text" id="operand1" name="operand1" >
+                <input type="text" id="operand1" name="operand1">
                 <p> var2 </p>
               </div>
-              <label id = "plus" style="width: 10px;" for="operand2"> + </label>
+              <label id="plus" style="width: 10px;" for="operand2"> + </label>
               <div class="type-checking-box">
                 <input type="text" id="operand2" name="operand2" placeholder="">
                 <p> var3 </p>
               </div>
-              <label id = "star" style="width: 10px;" for="operand3"> * </label>
+              <label id="star" style="width: 10px;" for="operand3"> * </label>
               <div class="type-checking-box">
                 <input type="text" id="operand3" name="operand3" placeholder="">
                 <p> var4 </p>
               </div>
-              <button type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
+              <button id = "submit" type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
             </div>
           </form>
 
-          <div id="syntaxTree1" width = 100px></div>
+          <div id="syntaxTree1" width=100px></div>
         </div>
 
       </div>
