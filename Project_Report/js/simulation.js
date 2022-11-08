@@ -750,6 +750,9 @@ function createSyntaxTree() {
       connectors: {
         type: "curve",
       },
+      node: {
+        collapsable: true,
+      },
       animation: {
         nodeAnimation: "easeInQuart",
         nodeSpeed: 700,
