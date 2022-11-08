@@ -309,3 +309,36 @@ hr {
 #type-checking-and-conversion select {
   height: 25px;
 }
+
+.sample-list, .sample-list2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sample-heading {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 5rem;
+}
+
+.sample-list li {
+  width: 150px;
+}
+
+.sample-list2 li {
+  width: 250px;
+}
+
+.title-div {
+  text-align: center;
+}
+
+.title-ol { 
+  display: inline-block;
+  text-align: left;
+}
+
+#title {
+  margin-left: -30px;
+}

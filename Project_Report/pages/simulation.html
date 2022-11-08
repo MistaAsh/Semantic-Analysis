@@ -105,22 +105,46 @@
       <div class="tab-content">
         <div id="type-expressions" class="tab-pane fade in active">
           <div class="row">
-            <div class="col-lg-5 instruction-box">
+            <div class="col-lg-6 instruction-box">
               <h3 class="simscreen-heading">Instructions</h3>
               <p>Enter a type expression in the format of <i>type[number][number]</i>...</p>
+
               <p>For example, if you enter int[2][3][4], the type tree will be generated as shown below.</p>
               <img src="../images/type-tree-1.png" alt="Type Tree" height="300px">
+
+
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <form class="inputForm">
                 <label for="typeExpression">Enter a type expression: </label>
-                <input type="text" id="typeExpression" name="type_expression" placeholder="ex: int[2][3][4]">
+                <input type="text" id="typeExpression" name="type_expression" placeholder="ex: int[2][3][4]"
+                  oninput="clearTypeExpressionTree()">
                 <button type="button" class="btn btn-primary" onclick="generateTypeTree()">Submit</button>
               </form>
               <p class="err" id="type-expression-err"></p>
-              <label for="simplifiedType" id="simplifiedTypeLabel">Simplified type expression: </label>
-              <p id="simplifiedType"></p>
-              <div id="typeTree">
+              <div id="type-expression-tree" class="hidden">
+                <label for="simplifiedType" id="simplifiedTypeLabel">Simplified type expression: </label>
+                <p id="simplifiedType"></p>
+                <div id="typeTree">
+                </div>
+              </div>
+
+              <div class="type-expression-examples" id="typeExpressionSampleInput">
+                <p class="sample-heading">Sample Inputs: </p>
+                <ul class="sample-list">
+                  <li>
+                    <p>float[1][1][2]</p>
+                  </li>
+                  <li>
+                    <p>int[1][4]</p>
+                  </li>
+                  <li>
+                    <p>char[1][2][10]</p>
+                  </li>
+                  <li>
+                    <p>bool</p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -131,35 +155,63 @@
             <div class="col-lg-6">
               <form class="inputForm">
                 <label id="expression" for="typeExpression1">Enter first expression: </label>
-                <input type="text" id="typeExpression1" name="type_expression1" placeholder="ex: int[2][3][4]">
+                <input type="text" id="typeExpression1" name="type_expression1" placeholder="ex: int[2][3][4]"
+                  oninput="clearEquivalenceTrees()">
               </form>
               <p class="err" id="type-expression-err1"></p>
             </div>
             <div class="col-lg-6">
               <form class="inputForm">
                 <label id="expression" for="typeExpression2">Enter second expression: </label>
-                <input type="text" id="typeExpression2" name="type_expression2" placeholder="ex: int[2][3][4]">
+                <input type="text" id="typeExpression2" name="type_expression2" placeholder="ex: int[2][3][4]"
+                  oninput="clearEquivalenceTrees()">
               </form>
-              <p class="err" id="type-expression-err2"></p>
+              <p class=" err" id="type-expression-err2"></p>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 center">
               <button type="button" class="btn btn-primary" onclick="checkEquivalence()">Check Equivalence</button>
-              <p id="equivalenceResult"></p>
+
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <label for="simplifiedType1" id="simplifiedTypeLabel1">Simplified type expression: </label>
-              <p id="simplifiedType1"></p>
-              <div id="typeTree1">
+
+          <div id="type-equivalence-trees" class="hidden">
+            <p id="equivalenceResult" style="text-align: center"></p>
+            <div class="row">
+              <div class="col-lg-6">
+                <label for="simplifiedType1" id="simplifiedTypeLabel1">Simplified type expression: </label>
+                <p id="simplifiedType1"></p>
+                <div id="typeTree1">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <label for="simplifiedType2" id="simplifiedTypeLabel2">Simplified type expression: </label>
+                <p id="simplifiedType2"></p>
+                <div id="typeTree2">
+                </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <label for="simplifiedType2" id="simplifiedTypeLabel2">Simplified type expression: </label>
-              <p id="simplifiedType2"></p>
-              <div id="typeTree2">
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 center">
+              <div class="type-expression-examples" id="typeEquivalenceSampleInput">
+                <p class="sample-heading">Sample Inputs: </p>
+                <ul class="sample-list">
+                  <li>
+                    <p>float[1][1][2]</p>
+                  </li>
+                  <li>
+                    <p>int[1][4]</p>
+                  </li>
+                  <li>
+                    <p>char[1][2][10]</p>
+                  </li>
+                  <li>
+                    <p>bool</p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -167,19 +219,19 @@
 
         <div id="type-checking-and-conversion" class="tab-pane fade">
           <div class="row">
-            <div class="col-lg-5 instruction-box">
+            <div class="col-lg-6 instruction-box">
               <h3 class="simscreen-heading">Instructions</h3>
               <p>Select the data-types from the dropdown boxes and click submit to run the simulation.</p>
               <p>For example, if the expression was <i>[int = double * int + double]</i>, the output would be-</p>
               <img src="../images/type-conversion-2.png" alt="Type-conversion" height="300px">
             </div>
-            
-            <div class="col-lg-7">
+
+            <div class="col-lg-6">
               <form action="" class="inputForm">
                 <label for="lhs">Enter the expression: </label>
                 <div class="type-checking">
                   <div class="type-checking-box">
-                    <select id="lhs" name="lhs">
+                    <select id="lhs" name="lhs" onchange = "showCheckingSampleInputs()">
                       <option value="int">int</option>
                       <option value="float">float</option>
                       <option value="char">char</option>
@@ -193,7 +245,7 @@
                   </div>
                   <label id="equal" style="width: 10px;" for="operand1"> = </label>
                   <div class="type-checking-box">
-                    <select id="operand1" name="operand1">
+                    <select id="operand1" name="operand1" onchange = "showCheckingSampleInputs()">
                       <option value="int">int</option>
                       <option value="float">float</option>
                       <option value="char">char</option>
@@ -207,40 +259,62 @@
                   </div>
                   <label id="plus" style="width: 10px;" for="operand2"> + </label>
                   <div class="type-checking-box">
-                    <select id="operand2" name="operand2">
-                  <option value="int">int</option>
-                  <option value="float">float</option>
-                  <option value="char">char</option>
-                  <option value="double">double</option>
-                  <option value="long">long</option>
-                  <option value="string">string</option>
-                  <option value="bool">bool</option>
-                  <option value="void">void</option>
-                </select>
+                    <select id="operand2" name="operand2" onchange = "showCheckingSampleInputs()">
+                      <option value="int">int</option>
+                      <option value="float">float</option>
+                      <option value="char">char</option>
+                      <option value="double">double</option>
+                      <option value="long">long</option>
+                      <option value="string">string</option>
+                      <option value="bool">bool</option>
+                      <option value="void">void</option>
+                    </select>
                     <p> var3 </p>
                   </div>
                   <label id="star" style="width: 10px;" for="operand3"> * </label>
                   <div class="type-checking-box">
-                    <select id="operand3" name="operand3">
-                  <option value="int">int</option>
-                  <option value="float">float</option>
-                  <option value="char">char</option>
-                  <option value="double">double</option>
-                  <option value="long">long</option>
-                  <option value="string">string</option>
-                  <option value="bool">bool</option>
-                  <option value="void">void</option>
-                </select>
+                    <select id="operand3" name="operand3" onchange = "showCheckingSampleInputs()">
+                      <option value="int">int</option>
+                      <option value="float">float</option>
+                      <option value="char">char</option>
+                      <option value="double">double</option>
+                      <option value="long">long</option>
+                      <option value="string">string</option>
+                      <option value="bool">bool</option>
+                      <option value="void">void</option>
+                    </select>
                     <p> var4 </p>
                   </div>
                   <button id="submit" type="button" class="btn btn-primary" onclick="createSyntaxTree()">Submit</button>
                 </div>
               </form>
-              
-              <p id="syntax-result"></p>
-              <div id="syntaxTree1" width = 100px></div>
+
+              <div id = "syntax-result-div" class="hidden">
+                <p id="syntax-result"></p>
+                <div id="syntaxTree1" width=100px></div>
+              </div>
+
+              <div class="type-expression-examples" id="typeCheckingSampleInput">
+                <p class="sample-heading">Sample Inputs: </p>
+                <ul class="sample-list2">
+                  <li>
+                    <p>int = int + double * float</p>
+                  </li>
+                  <li>
+                    <p>string = int + float * char</p>
+                  </li>
+                  <li>
+                    <p>double = int + char * int</p>
+                  </li>
+                  <li>
+                    <p>char = int + int * int</p>
+                  </li>
+                </ul>
               </div>
             </div>
+
+
+          </div>
           </form>
           </p>
         </div>

@@ -46,7 +46,10 @@ function parseTypeInput(inputStr, errEl) {
     errEl.innerHTML = "Invalid type expression";
     return;
   }
-
+  let sampleInputs = document.getElementById("typeExpressionSampleInput");
+  sampleInputs.classList.add("hidden");
+  let parseTree = document.getElementById("type-expression-tree");
+  parseTree.classList.remove("hidden");
   return splittedInput;
 }
 
@@ -141,6 +144,14 @@ function checkEquivalence() {
 
   let splittedInput1 = parseTypeInput(inputStr1, errEl1);
   let splittedInput2 = parseTypeInput(inputStr2, errEl2);
+
+ 
+  if (splittedInput1 && splittedInput2) {
+    let equivalenceTrees = document.getElementById("type-equivalence-trees");
+    equivalenceTrees.classList.remove("hidden");
+    let sampleInput = document.getElementById("typeEquivalenceSampleInput");
+    sampleInput.classList.add("hidden");
+  }
 
   [outputStr1, nodes1] = generateNodes(splittedInput1);
   [outputStr2, nodes2] = generateNodes(splittedInput2);
@@ -707,10 +718,16 @@ function createTrees() {
   }
 
   createSyntaxTree();
-  createAnnotatedSyntaxTree();
+  // createAnnotatedSyntaxTree();
 }
 
 function createSyntaxTree() {
+
+  let sampleInput = document.getElementById("typeCheckingSampleInput");
+  sampleInput.classList.add("hidden");
+  let syntaxResult = document.getElementById("syntax-result-div");
+  syntaxResult.classList.remove("hidden");
+
   let plus_error = false;
   let star_error = false;
   let equal_error = false;
@@ -767,27 +784,27 @@ function createSyntaxTree() {
       ...((plus_error || star_error || equal_error) && { HTMLclass: "red" }),
       children: [
         {
-          text: {name: lhs},
+          text: { name: lhs },
         },
         {
           text: { name: "+ (" + plus_type + ")" },
           ...((plus_error || !plus_type) && { HTMLclass: "red" }),
           children: [
             {
-              text: {name: operand1_type},
+              text: { name: operand1_type },
 
             },
 
             {
-              text: {name: "* (" + star_type + ")"},
+              text: { name: "* (" + star_type + ")" },
               ...(star_error && { HTMLclass: "red" }),
               children: [
                 {
-                  text: {name: operand2_type},
+                  text: { name: operand2_type },
 
                 },
                 {
-                  text: {name: operand3_type},
+                  text: { name: operand3_type },
 
                 },
               ],
@@ -818,6 +835,24 @@ function createSyntaxTree() {
 }
 
 
-function createAnnotatedSyntaxTree() {
+function clearTypeExpressionTree() {
+  let sampleInputs = document.getElementById("typeExpressionSampleInput");
+  sampleInputs.classList.remove("hidden");
+  let parseTree = document.getElementById("type-expression-tree");
+  parseTree.classList.add("hidden");
+}
 
+function clearEquivalenceTrees() {
+
+  let sampleInputs = document.getElementById("typeEquivalenceSampleInput");
+  sampleInputs.classList.remove("hidden");
+  let parseTree = document.getElementById("type-equivalence-trees");
+  parseTree.classList.add("hidden");
+}
+
+function showCheckingSampleInputs(){
+  let sampleInputs = document.getElementById("typeCheckingSampleInput");
+  sampleInputs.classList.remove("hidden");
+  let syntaxResult = document.getElementById("syntax-result-div");
+  syntaxResult.classList.add("hidden");
 }
