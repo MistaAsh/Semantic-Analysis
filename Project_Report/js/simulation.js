@@ -7,6 +7,9 @@ const typeTreeConfig = {
     nodeAnimation: "easeInQuart",
     nodeSpeed: 700,
   },
+  node: {
+    collapsable: true,
+  },
   animateOnInit: true,
   levelSeparation: 60,
   siblingSeparation: 90,
@@ -761,27 +764,27 @@ function createSyntaxTree() {
       ...((plus_error || star_error || equal_error) && { HTMLclass: "red" }),
       children: [
         {
-          text: lhs,
+          text: {name: lhs},
         },
         {
           text: { name: "+ (" + plus_type + ")" },
           ...((plus_error || !plus_type) && { HTMLclass: "red" }),
           children: [
             {
-              text: operand1_type,
+              text: {name: operand1_type},
 
             },
 
             {
-              text: "* (" + star_type + ")",
+              text: {name: "* (" + star_type + ")"},
               ...(star_error && { HTMLclass: "red" }),
               children: [
                 {
-                  text: operand2_type,
+                  text: {name: operand2_type},
 
                 },
                 {
-                  text: operand3_type,
+                  text: {name: operand3_type},
 
                 },
               ],
@@ -792,7 +795,6 @@ function createSyntaxTree() {
     },
   };
 
-  console.log(config.nodeStructure);
 
   let chart = new Treant(config, () => {
     console.log("Syntax Tree generated");

@@ -272,10 +272,6 @@ hr {
 
 }
 
-.node {
-  display: flex !important;
-}
-
 .type-checking {
   display: flex;
   flex-wrap: wrap;
