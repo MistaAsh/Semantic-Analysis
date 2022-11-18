@@ -1,0 +1,4 @@
+- To understand the breakdown of Type Expressions to their simplified forms.
+- To understand the structural differences between two type expressions and how their equivalence is checked.
+- To observe and learn the implementation of Semantic Analysis phase using Type Checking.
+- To visualize and structurally present how a compiler handles Type Conversion.

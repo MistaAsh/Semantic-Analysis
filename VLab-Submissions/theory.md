@@ -1,0 +1,83 @@
+### INTRODUCTION<br>
+
+<div>
+  <h3 class="def-heading">Semantic Analysis</h3>
+  <p class="theory">
+    Semantic analysis is the process of drawing meaning from text. It allows computers to understand and interpret sentences, paragraphs, or whole documents, by analyzing their grammatical structure, and identifying relationships between individual words in a particular context. 
+    <br>
+    It uses syntax tree and symbol table to check whether the given program is semantically consistent with language definition. It gathers type information and stores it in either syntax tree or symbol table. This type information is subsequently used by compiler during intermediate-code generation.
+    <br>
+    Semantic Analyzers generally recognize semantic errors such as Type mismatch, undeclared variables, reserved identifier misuse, etc. Functions of the semantic analyzer include-               
+    <div class="theory-li">
+      <li class="theory-li-container"> Type Checking: ensures that data types are used in a way consistent with their definition.</li>
+      <li class="theory-li-container"> Label Checking: a program should contain labels references. </li>
+      <li class="theory-li-container"> Flow Control Check: keeps a check that control structures are used in a proper manner (example: no break statement outside a loop) </li>
+    </div>
+  </p>
+  <figure>
+    <img src="./images/semantic-analysis-1.png" alt="semantic-analysis-1" class="theory-image">
+    <figcaption>Fig 1: Semantic Analysis in Compiler Design </figcaption>
+  </figure>
+</div>
+
+<div>
+  <h3 class="def-heading">Type Expressions</h3>
+  <p class="theory">
+    Type Expression is an entity in Compiler Design that denotes the type of a language construct. Type Expressions can be of multiple types such as-
+      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - basic types: <i>int, float, double, char</i> 
+      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - formed by applying operators called <i>type constructors</i> to another type expressions 
+      <br> A type constructor applied to a type expression is a type expression. 
+      <br> For example, <b>Array:</b> if T is a type expression then array(I, T) is a type expression denoting the type of an array with elements of type T and index set I.
+  </p>
+  <hr class="hr-separator">
+
+  <h3 class="def-heading">Type Checking</h3>
+  <p class="theory">
+    Type Checking in Compiler Design refers to the process of checking for each operation such that they receive the required number of operands of the proper datatype.  
+    <br> For example, in the expression: &nbsp; <b><i>A = B * j + d;</i></b>
+    <br> * and + are basically int and float data types based operations and if any variable in this expression is of other than int and float then compiler will generate type error.
+    <div class="theory-li-container">
+      <li class="theory-li"> Dynamic Type Checking: it is done at runtime and uses the concept of type tag which is stored in each data objects that indicates the type of the object. Languages such as <i>Perl</i> and <i>Prolog</i> follow dynamic type checking. </li>
+      <li class="theory-li"> Static Type Checking: it is done at compile-time. The information for the same is provied by the declaration of language structures. 
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - for each operation, the number, order and datatype of the arguments are required.
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - for each variable, the name and datatype is required.
+      </li>
+    </div>
+  </p>
+  <figure>
+    <img src="./images/type-checker-1.png" alt="type-checker-1" class="theory-image">
+    <figcaption>Fig 2: Type Checker </figcaption>
+  </figure>
+</div>
+
+<div>
+  <h3 class="def-heading">Type Equivalence</h3>
+  <p class="theory">
+    Type Equivalence is the methodology of defining the equivalence of two types. The different types of equivalence that are essential to be considered are:
+    <div class="theory-li">
+      <li class="theory-li-container"> Structural equivalence: Two type expressions are said to be structurally equivalent if and only if, either these are of the same basic types or these are formed by applying the same constructor to the given equivalent types. </li>
+      <li class="theory-li-container"> Name equivalence: two type expressions can be said to be name equivalent if and only if, they are structurally equivalent and the names of the type constructors are the same. </li>
+    </div>
+  </p>
+  <figure>
+    <img src="./images/type-equivalence-1.png" alt="type-equivalence-1" class="theory-image">
+    <figcaption>Fig 3: Structurally Equivalent type expressions </figcaption>
+  </figure>
+</div>
+
+<div>
+  <h3 class="def-heading">Type Conversion</h3>
+  <p class="theory">
+    The type conversion is an operation that takes a data object of one type and creates the equivalent data objects of multiple types. The signature of a type conversion operation is given as
+    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>conversion_op : type1 → type2</i>
+    <br> If during type checking, a mismatch appears between the actual type of an argument and the expected type for that operation, then type conversion easily converts the data object implicitly and prevents the error. In some languages such as C, type conversion is a built-in function, which implicitly casts an expression to convert it to the correct type. There are two types of type conversions-
+    <div class="theory-li-container">
+      <li class="theory-li">Implicit type conversion (Coercions): The programming languages that enable mixed-mode expressions should describe conventions for implicit operand type conversions. Coercion is defined as an automatic conversion between types. For example in Pascal, if the operands for the addition operation are of integer type and other real types, one of then the integer data object is implicitly changed to type real earlier the addition is implemented. </li>
+      <li class="theory-li">Explicit type conversion: Some languages support few efficiencies for doing explicit conversions, both widening and narrowing. In some cases, warning messages are created when an explicit narrowing conversion results in a meaningful change to the value of the object being modified.</li>
+    </div>
+  </p>
+  <figure>
+    <img src="./images/type-conversion-1.jpg" alt="type-conversion-1" class="theory-image">
+    <figcaption>Fig 4: Type Conversion hierarchy in C</figcaption>
+  </figure>
+</div>

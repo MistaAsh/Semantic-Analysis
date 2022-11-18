@@ -1,0 +1,52 @@
+[
+	{
+		"question": "Type checking is normally done during?",
+		"answers": {
+			"a": "Lexical Analysis",
+			"b": "Syntax Analysis",
+			"c": "Syntax Directed Translation",
+			"d": "Code optimization"
+		},
+		"correctAnswer": "c"
+	},
+	{
+		"question": "Which of the following statements is FALSE?",
+		"answers": {
+			"a": "In statically typed languages. each variable in a program has a fixed type",
+			"b": "In un-typed languages, values do not have any types",
+			"c": "In dynamically typed languages, variables have no types",
+			"d": "In all statiFcally typed languages, each variable in a program is associated woth values of only a single type during the execution of the program"
+		},
+		"correctAnswer": "a"
+	},
+	{
+		"question": "Which of the following error is expected to recognize by semantic analyzer?",
+		"answers": {
+			"a": "Type mismatch",
+			"b": "Undeclared variable",
+			"c": "Reserved identifier misuse.",
+			"d": "All of the above"
+		},
+		"correctAnswer": "d"
+	},
+	{
+		"question": "What is the full form of SDT?",
+		"answers": {
+			"a": "Syntax Directed Tree",
+			"b": "Syntax Directed Translation  ",
+			"c": "Semantic Direct Translation",
+			"d": "Similar Distinct Tree"
+		},
+		"correctAnswer": "b"
+	},
+	{
+		"question": " What is true about Syntax Directed Definitions?",
+		"answers": {
+			"a": "Syntax Directed Definitions + Semantic rules = CFG",
+			"b": "Syntax Directed Definitions + CFG = Semantic rules",
+			"c": "CFG + Semantic rules = Syntax Directed Definitions",
+			"d": "None of the above"
+		},
+		"correctAnswer": "c"
+	}
+]

@@ -1,0 +1,46 @@
+{
+
+   "details": [
+       {
+			"Experiment": "Implementation of Semantic Analysis Phase",
+			"Lab": "Compiler Design Lab",
+			"Discipline": "Computer Science and Engineering",
+			"Technology": "HTML, Javascript, CSS, JQuery, Bootstrap, treant.js"
+       }
+   ],
+
+   "developer": [
+       {
+      "Developer": "Dr. Biswajit R. Bhowmik",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ],
+
+   "contributer": [
+       {
+			"Contributer": "Ashish Bharath",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Dibyam Kumar",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Pranav Agarwal",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Shashank SM",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ]
+
+}
