@@ -1,0 +1,344 @@
+.name {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.simscreen {
+  height: 57%;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.simp-simscreen {
+  height: 57%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 1.8rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  display: inline-block;
+  width: 25rem;
+  text-align: left;
+}
+
+#type-expressions input {
+  width: 150px;
+}
+
+p {
+  font-size: 2rem;
+  font-family: serif;
+}
+
+.simscreen-names {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.simscreen-heading {
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+  color: #3e6389;
+  font-weight: 300;
+}
+.main-heading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 4rem;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.input-li {
+  margin: 0;
+  padding: 1.2rem;
+  list-style: none;
+  justify-content: left;
+  display: block;
+  width: 100%;
+}
+.concl-li {
+  margin: 0;
+  padding: 1.5rem;
+  justify-content: left;
+  width: 100%;
+}
+
+.msg {
+  display: block;
+  text-align: center;
+}
+
+.definitions {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and(max-width: 600px) {
+  .simscreen {
+    width: 90%;
+  }
+}
+
+figcaption {
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.theory-image {
+  width: 80% !important;
+  margin: 2% 10%;
+}
+
+.theory-li {
+  font-size: 1.8rem;
+}
+
+.theory-li-container {
+  padding-left: 3rem;
+}
+
+.test-options {
+  font-size: 2rem;
+  font-family: serif;
+}
+
+.procedure-item {
+  font-size: 2rem;
+  font-family: serif;
+}
+
+.navbar-collapse {
+  margin-left: auto !important;
+}
+
+.navbar-toggler {
+  margin-left: auto !important;
+  margin-right: 2rem;
+}
+
+.navbar-brand {
+  font-size: 2.5rem !important;
+  font-weight: 900 !important;
+  color: #3e6389 !important;
+  padding-left: 2rem !important;
+}
+
+.active .nav-link {
+  color: #ff6600 !important;
+}
+
+.active .nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: #3e6389 !important;
+  font-size: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline !important;
+}
+
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+hr {
+  width: 90%;
+}
+
+.hr-separator {
+  margin: 4rem;
+}
+
+.fa-bars {
+  color: #3e6389;
+  font-size: 2.5rem;
+}
+
+.navbar-toggler {
+  padding: 0 !important;
+}
+
+#collapsibleNavbar {
+  margin-left: 2rem !important;
+}
+
+.student-name {
+  font-size: 1.8rem;
+}
+
+#typeTree {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+#simplifiedType {
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+#simplifiedType1 {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#simplifiedType2 {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#simplifiedTypeLabel {
+  display: none;
+}
+
+#simplifiedTypeLabel1 {
+  display: none;
+}
+
+#simplifiedTypeLabel2 {
+  display: none;
+}
+
+.nav-tabs {
+  font-size: 18px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inputForm {
+  margin-top: 3rem;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.err {
+  color: red;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.red {
+  color: red;
+}
+
+#equivalenceResult {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+#expression {
+  text-align: center;
+}
+
+#type-checking-and-conversion > label {
+  width: 10px;
+
+}
+
+#type-checking-and-conversion input {
+  width: 100px !important;
+
+}
+
+.type-checking {
+  display: flex;
+  flex-wrap: wrap;
+ align-items: top;
+}
+
+.type-checking-box {
+  display: flex;
+  width: 75px; 
+  margin-left: 10px;
+  flex-direction: column;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* .typeExpression2 {
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+} */
+
+.type-checking > button {
+  margin-left: 10px !important;
+  height: 30px !important;
+}
+
+.type-checking > label {
+  margin-left: 10px;
+}
+
+.instruction-box {
+  text-align: justify;
+}
+
+#type-checking-and-conversion select {
+  height: 25px;
+}
+
+.sample-list, .sample-list2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sample-heading {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 5rem;
+}
+
+.sample-list li {
+  width: 150px;
+}
+
+.sample-list2 li {
+  width: 250px;
+}
+
+.title-div {
+  text-align: center;
+}
+
+.title-ol { 
+  display: inline-block;
+  text-align: left;
+}
+
+#title {
+  margin-left: -30px;
+}
